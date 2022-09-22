@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Header from './components/Header';
+import Content from './components/Content';
 
 class App extends Component {
   constructor(props) {
@@ -23,10 +25,18 @@ _getHost = async() => {
 render() {
   return(
     <div className='App'>
-      <h3> Welcome tooooo <u> {this.state.host} </u> Blog! </h3>
+      <Header title={this.props.headerTitle}/>
+      <Content title={this.props.ContentTitle}
+               body={this.props.contentBody}/>
     </div>
   )
 }
 }
+
+App.defaultProps = {
+  headerTitle: 'Default header',
+  contentTitle: 'Default contentTitle',
+  contentBody: 'Default contentBody'
+};
 
 export default App;
