@@ -7,11 +7,13 @@ import {
   Route
 } from "react-router-dom";
 import First from './First';
+import Header from './components/Header';
 
 
 const App = () => {
   return(
     <div className ='App'>
+      <Header/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
