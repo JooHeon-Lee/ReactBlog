@@ -15,4 +15,4 @@ RUN npm install react-scripts@3.0.1 -g --silent
 # start app
 CMD ["npm", "start"]
  
-그리고 docker-compose up 명령어를 수행하면 로컬 도커 환경에서 리액트 데몬이 기본적으로 구동되는 것을 알 수 있다.
+#그리고 docker-compose up 명령어를 수행하면 로컬 도커 환경에서 리액트 데몬이 기본적으로 구동되는 것을 알 수 있다.
