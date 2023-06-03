@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Main from './Main';
-import {
-  BrowserRouter,
-  Routes,
-  Route
+import {  
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Routes
 } from "react-router-dom";
-import First from './First';
-import Header from './components/Header';
 
+import {Home,Main,Write} from './pages/index.js';
+import {default as Header} from './components/Header';
 
-const App = () => {
-  return(
-    <div className ='App'>
+/**
+ * 
+ * React Router
+ * 1.index.js BrowserRouter 로 감싸기.
+ * 2. App.js 공통 컴포넌트 삽입 및 라우터 정의
+ * 
+ */
+
+const App = () =>
+{
+    return (
+      <>
       <Header/>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />}></Route>
-          <Route path="/First" element={<First />}></Route>
-          
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-};
-
-
+    <Routes>
+      <Route path='/' element = {<Home/>}></Route>
+      <Route path='/main' element = {<Main/>}></Route>
+      <Route path='/write' element = {<Write/>}></Route>
+    </Routes>
+    </>
+)
+}
 
 export default App;

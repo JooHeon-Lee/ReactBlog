@@ -1,22 +1,30 @@
-import React from "react";
-import './Header.css'
-
-const MenuItem = ({ active, children, to }) => (
-  <div className="menu-item">{children}</div>
-);
+import React, { Component } from "react";
+import {  
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Routes,
+  Outlet
+} from "react-router-dom";
 
 const Header = () => {
-  return (
-    <div>
-      <div className="logo">Banner</div>
-      <div className="menu">
-        <MenuItem>홈</MenuItem>
-        <MenuItem>소개</MenuItem>
-        <MenuItem>구매신청</MenuItem>
-        <MenuItem>FAQ</MenuItem>
+    return (
+      <div className='header_grid'>
+      <div className='acenter'>
+
+        <Link className='link_tit' to='/'> <h3> JHLee's Blog </h3> </Link>
+        <Link className='link_tit' to='/main'> <h3> Main </h3> </Link>
+        <Link className='link_tit' to='/Write'> <h3> Write </h3> </Link>
+
       </div>
-    </div>
-  );
-};
+
+      <div className='acenter'> 
+          <h5> 관리자 로그인 </h5>
+      </div>
+      <Outlet/>
+  </div>
+    )
+}
+
 
 export default Header;
